@@ -1,0 +1,16 @@
+---
+- name: Install iptables
+  yum:
+    name: iptables,iptables-services
+    state: present
+
+- name: Disable firewalld
+  yum:
+    name: firewalld
+    state: absent
+
+- name: Stop service
+  systemd:
+    name: iptables.service
+    state: stopped
+    enabled: no
