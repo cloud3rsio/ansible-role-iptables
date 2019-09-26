@@ -36,12 +36,12 @@ Example Playbook
   roles:
     - role: cloud3rsio.iptables/enable
       iptables_config: |
-	    *filter
-		-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
-		-A INPUT -s 127.0.0.1/32 -j ACCEPT
-		-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
-		-A INPUT -j DROP
-		COMMIT
+        *filter
+        -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+        -A INPUT -s 127.0.0.1/32 -j ACCEPT
+        -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+        -A INPUT -j DROP
+        COMMIT
 
 # Disable
 - hosts: all
